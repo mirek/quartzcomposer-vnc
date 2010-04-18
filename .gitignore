@@ -1,0 +1,5 @@
+.DS_Store
+build
+VNC Server.xcodeproj/*.pbxuser
+VNC Server.xcodeproj/*.mode1v3
+!VNC Server.xcodeproj/default.pbxuser

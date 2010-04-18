@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>VNC Server</string>
+	<key>description</key>
+	<string>VNC Server
+  
+Connect it with any image ie. with output from Render in Image patch.
+
+Server port is standard VNC port 5900.
+
+To connect use your favourite VNC client from PC/iPhone/Mac.
+
+On the Mac you can use vncviewer:
+$ port install vncviewer
+$ vncviewer -viewonly -encodings 'raw' localhost
+
+You can use other encodings ie. tight.
+
+This version is not optimized.
+
+(c) 2010 QuartzComposer.com, Mirek Rusin &lt;mirek@me.com&gt; GPL</string>
+	<key>copyright</key>
+	<string>(c) 2010 QuartzComposer.com, Mirek Rusin &lt;mirek@me.com&gt; GPL</string>
+	<key>attributes</key>
+	<dict>
+		<key>inputImage</key>
+		<dict>
+			<key>QCPortAttributeNameKey</key>
+			<string>Image</string>
+			<key>QCPortAttributeDescriptionKey</key>
+			<string>Input image, most of the time you want to connect it with Render in Image output</string>
+			<key>QCPortAttributeDefaultKey</key>
+			<false/>
+		</dict>
+		<key>inputPort</key>
+		<dict>
+			<key>QCPortAttributeNameKey</key>
+			<string>Server Port</string>
+			<key>QCPortAttributeDescriptionKey</key>
+			<string>VNC server port, default is 5900</string>
+			<key>QCPortAttributeDefaultKey</key>
+			<integer>5900</integer>
+			<key>QCPortAttributeMinimumValueKey</key>
+			<real>1</real>
+			<key>QCPortAttributeMaximumValueKey</key>
+			<integer>65535</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,10 @@
+
+libjpeg.a
+  Architectures: x86_64, i386, ppc 
+
+libvncserver.a
+  Architectures: x86_64, i386, ppc
+  http://libvncserver.sourceforge.net v0.9.9
+
+libz.a
+  Architectures: x86_64, i386, ppc 
