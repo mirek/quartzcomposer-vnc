@@ -1,8 +1,8 @@
 #ifndef _RFB_RFBINT_H
 #define _RFB_RFBINT_H 1
 #ifndef _GENERATED_STDINT_H
-#define _GENERATED_STDINT_H "x11vnc 0.9.9"
-/* generated using a gnu compiler version gcc (GCC) 3.3.5 (Debian 1:3.3.5-8) Copyright (C) 2003 Free Software Foundation, Inc. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. */
+#define _GENERATED_STDINT_H "LibVNCServer 0.9.8.2"
+/* generated using a gnu compiler version i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.9.00) Copyright (C) 2007 Free Software Foundation, Inc. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. */
 
 #include <stdint.h>
 

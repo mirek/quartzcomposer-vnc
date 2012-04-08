@@ -32,14 +32,16 @@
 @property (readonly) NSData *frameBufferData;
 
 + (VNCServer *) serverWithQCImage: (id<QCPlugInInputImageSource>) image;
-- (VNCServer *) initWithQCImage: (id<QCPlugInInputImageSource>) image;    
+- (VNCServer *) initWithQCImage: (id<QCPlugInInputImageSource>) image;
 - (VNCServer *) initWithWidth: (int) width height: (int) height bitsPerSample: (int) bitsPerSample samplesPerPixel: (int) samplesPerPixel bytesPerPixel: (int) bytesPerPixel;
 
-- (void) markAsModifiedWithRect: (NSRect) rect;
-- (void) createScreenWithWidth: (int) width height: (int) height bitsPerSample: (int) bitsPerSample samplesPerPixel: (int) samplesPerPixel bytesPerPixel: (int) bytesPerPixel;
+//- (void) setScreenWithWidth: (int) width height: (int) height bitsPerSample: (int) bitsPerSample samplesPerPixel: (int) samplesPerPixel bytesPerPixel: (int) bytesPerPixel;
+
 - (void) runEventLoopInBackground: (BOOL) runInBackground;
-- (void) markAllAsModified;
-- (void) markAsModifiedWithRect: (NSRect) rect;
+
 - (void) updateWithQCImage: (id<QCPlugInInputImageSource>) image;
+
+- (void) markAsModifiedWithRect: (NSRect) rect;
+- (void) markAsModified;
 
 @end

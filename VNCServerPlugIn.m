@@ -50,6 +50,9 @@
 }
 
 - (void) dealloc {
+  if (vncServer) {
+    [vncServer release];
+  }
 	[super dealloc];
 }
 
@@ -96,7 +99,7 @@
 
     // If it's the first frame, setup vnc server based on image info and run in background
     if (vncServer == nil) {
-      vncServer = [VNCServer serverWithQCImage: image];
+      vncServer = [[VNCServer alloc] initWithQCImage: image];
       [vncServer runEventLoopInBackground: YES];
     }
     

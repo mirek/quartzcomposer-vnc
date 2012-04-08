@@ -1,30 +1,26 @@
 # Quartz Composer VNC Server PlugIn
 
 Quartz Composer port by Mirek Rusin <mirek [at] me [dot] com>
-Homepage http://quartzcomposer.com/, source-code http://github.com/mirek
-Based on libvncserver v0.9.9 by J. E. Schindelin et al - http://libvncserver.sourceforge.net
-Copyright 2010 Inteliv Ltd
-
-## Prerequisites
-
-* git
-  - install http://www.macports.org
-  - then: `sudo port install git`
-* vnc client (optional)
-  - `sudo port install vnc`
+Homepage http://quartzcomposer.com/, source-code http://github.com/mirek/quartzcomposer-vnc
+Based on libvncserver v0.9.8.2 by J. E. Schindelin et al - http://libvncserver.sourceforge.net
 
 ## Usage
 
     git clone git://github.com/mirek/quartzcomposer-vnc.git
     cd quartzcomposer-vnc
-    open "VNC Server.xcodeproj"
-    # Build and Run
+    xcodebuild
+
+Alternativelly you can open the project in Xcode and Run.
 
 This will launch Quartz Composer with example composition serving vnc.
     
-Use any vnc client to connect, ie:
+Use any vnc client to connect:
 
     vncviewer localhost
+
+To install vncviewer use:
+
+    brew install tiger-vnc
 
 ## License
 

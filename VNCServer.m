@@ -28,11 +28,31 @@
 @synthesize frameBufferData;
 
 + (VNCServer *) serverWithQCImage: (id<QCPlugInInputImageSource>) image {
-  return [[self alloc] initWithQCImage: image];
+  return [[[self alloc] initWithQCImage: image] autorelease];
+}
+
+- (VNCServer *) initWithWidth: (int) width height: (int) height bitsPerSample: (int) bitsPerSample samplesPerPixel: (int) samplesPerPixel bytesPerPixel: (int) bytesPerPixel {
+  if (self = [super init]) {
+    
+    screenInfo = rfbGetScreen(0, NULL, width, height, bitsPerSample, samplesPerPixel, bytesPerPixel);
+    frameBufferData = [[NSData alloc] initWithBytesNoCopy: malloc(width * height * bytesPerPixel) length: width * height * bytesPerPixel freeWhenDone: YES];
+    screenInfo->frameBuffer = (char *)[frameBufferData bytes];
+    
+//    [self createScreenWithWidth: width height: height bitsPerSample: bitsPerSample samplesPerPixel: samplesPerPixel bytesPerPixel: bytesPerPixel];
+    screenInfo->deferUpdateTime = 0;
+    screenInfo->cursor = NULL;
+    rfbInitServer(screenInfo);
+  }
+  return self;
+}
+
+- (void) dealloc {
+  
+  [super dealloc];
 }
 
 - (VNCServer *) initWithQCImage: (id<QCPlugInInputImageSource>) image {
-  if (self = [super init]) {
+  if ((self = [super init])) {
     int width = [image imageBounds].size.width;
     int height = [image imageBounds].size.height;
     int bitsPerSample;
@@ -70,11 +90,9 @@
       assert(false);
     }
     
-    [self createScreenWithWidth: width
-                         height: height
-                  bitsPerSample: bitsPerSample
-                samplesPerPixel: samplesPerPixel
-                  bytesPerPixel: bytesPerPixel];
+    screenInfo = rfbGetScreen(0, NULL, width, height, bitsPerSample, samplesPerPixel, bytesPerPixel);
+    frameBufferData = [[NSData alloc] initWithBytesNoCopy: malloc(width * height * bytesPerPixel) length: width * height * bytesPerPixel freeWhenDone: YES];
+    screenInfo->frameBuffer = (char *)[frameBufferData bytes];
     
     // DRY man!
     screenInfo->deferUpdateTime = 0;
@@ -85,37 +103,21 @@
   return self;
 }
 
-- (VNCServer *) initWithWidth: (int) width height: (int) height bitsPerSample: (int) bitsPerSample samplesPerPixel: (int) samplesPerPixel bytesPerPixel: (int) bytesPerPixel {
-  if (self = [super init]) {
-    [self createScreenWithWidth: width height: height bitsPerSample: bitsPerSample samplesPerPixel: samplesPerPixel bytesPerPixel: bytesPerPixel];
-    screenInfo->deferUpdateTime = 0;
-    screenInfo->cursor = NULL;
-    rfbInitServer(screenInfo);
-  }
-  return self;
-}
-
 - (void) markAsModifiedWithRect: (NSRect) rect {
-  int x1 = (int)rect.origin.x;
-  int y1 = (int)rect.origin.y;
-  int x2 = (int)(rect.origin.x + rect.size.width);
-  int y2 = (int)(rect.origin.y + rect.size.height);
+  int x1 = (int) rect.origin.x;
+  int y1 = (int) rect.origin.y;
+  int x2 = (int) (rect.origin.x + rect.size.width);
+  int y2 = (int) (rect.origin.y + rect.size.height);
   rfbMarkRectAsModified(screenInfo, x1, y1, x2, y2);
 }
 
-- (void) markAllAsModified {
+- (void) markAsModified {
   rfbMarkRectAsModified(screenInfo, 0, 0, screenInfo->width, screenInfo->height);
 }
 
 - (void) updateWithQCImage: (id<QCPlugInInputImageSource>) image {
   memcpy((char *)[frameBufferData bytes], [image bufferBaseAddress], [frameBufferData length]);
-  [self markAllAsModified];
-}
-
-- (void) createScreenWithWidth: (int) width height: (int) height bitsPerSample: (int) bitsPerSample samplesPerPixel: (int) samplesPerPixel bytesPerPixel: (int) bytesPerPixel {
-  screenInfo = rfbGetScreen(0, NULL, width, height, bitsPerSample, samplesPerPixel, bytesPerPixel);
-  frameBufferData = [[NSData alloc] initWithBytesNoCopy: malloc(width * height * bytesPerPixel) length: width * height * bytesPerPixel freeWhenDone: YES];
-  screenInfo->frameBuffer = (char *)[frameBufferData bytes];
+  [self markAsModified];
 }
 
 - (void) runEventLoopInBackground: (BOOL) runInBackground {

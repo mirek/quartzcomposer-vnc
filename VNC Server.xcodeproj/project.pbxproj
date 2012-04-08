@@ -3,23 +3,8 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
-
-/* Begin PBXAggregateTarget section */
-		233E2C640A83C768005A62DF /* Build & Copy */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 233E2D890A83C7AC005A62DF /* Build configuration list for PBXAggregateTarget "Build & Copy" */;
-			buildPhases = (
-				233E2C690A83C783005A62DF /* ShellScript */,
-			);
-			dependencies = (
-				233E2C660A83C76D005A62DF /* PBXTargetDependency */,
-			);
-			name = "Build & Copy";
-			productName = "Build & Install";
-		};
-/* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
 		16BA95420A7EB2EB001E4983 /* VNCServerPlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BA95410A7EB2EB001E4983 /* VNCServerPlugIn.m */; };
@@ -27,30 +12,34 @@
 		7238D5520DB6988600E9A42D /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7238D5500DB6988600E9A42D /* Settings.xib */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		EB2A15801128A6A700353B43 /* VNCServer.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2A157F1128A6A700353B43 /* VNCServer.m */; };
-		EB4F6EA711B7075600FE4528 /* libvncserver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8B41EF117B65A5004C4432 /* libvncserver.a */; };
-		EB4F6EAC11B7077300FE4528 /* libvncserver-libz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8B41F0117B65A5004C4432 /* libvncserver-libz.a */; };
-		EB4F6EAF11B7077800FE4528 /* libvncserver-libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8B41EE117B65A5004C4432 /* libvncserver-libjpeg.a */; };
+		EB9F7A6A15313929005F3219 /* libjpeg.8.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = EB9F7A5D153137C2005F3219 /* libjpeg.8.dylib */; };
+		EB9F7A6B1531392C005F3219 /* libvncserver.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = EB9F7A5E153137C2005F3219 /* libvncserver.dylib */; };
+		EB9F7A6C15313F45005F3219 /* libjpeg.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9F7A5D153137C2005F3219 /* libjpeg.8.dylib */; };
+		EB9F7A6D15313F45005F3219 /* libvncserver.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9F7A5E153137C2005F3219 /* libvncserver.dylib */; };
+		EB9F7A7815314263005F3219 /* VNC Server.plugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D5B49B6048680CD000E48DA /* VNC Server.plugin */; };
 		EBD66FDE112CD4BE00335393 /* VNCServerPlugIn.xml in Resources */ = {isa = PBXBuildFile; fileRef = EBD66FDD112CD4BE00335393 /* VNCServerPlugIn.xml */; };
 		EBD66FFE112CDD8300335393 /* QCXPlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD66FEB112CD5E700335393 /* QCXPlugIn.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		233E2C650A83C76D005A62DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
-			remoteInfo = "VNC Server";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
+		EB9F7A7715314245005F3219 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$HOME/Library/Graphics/Quartz Composer Plug-Ins";
+			dstSubfolderSpec = 0;
+			files = (
+				EB9F7A7815314263005F3219 /* VNC Server.plugin in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBD6708C112CEEEB00335393 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				EB9F7A6A15313929005F3219 /* libjpeg.8.dylib in Copy Frameworks */,
+				EB9F7A6B1531392C005F3219 /* libvncserver.dylib in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,11 +57,18 @@
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB2A157E1128A6A700353B43 /* VNCServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VNCServer.h; sourceTree = "<group>"; };
 		EB2A157F1128A6A700353B43 /* VNCServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VNCServer.m; sourceTree = "<group>"; };
-		EB2A158B1128A8DF00353B43 /* VNCServer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VNCServer-Info.plist"; sourceTree = "<group>"; };
-		EB8B41EE117B65A5004C4432 /* libvncserver-libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libvncserver-libjpeg.a"; path = "lib/libvncserver-libjpeg.a"; sourceTree = "<group>"; };
-		EB8B41EF117B65A5004C4432 /* libvncserver.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvncserver.a; path = lib/libvncserver.a; sourceTree = "<group>"; };
-		EB8B41F0117B65A5004C4432 /* libvncserver-libz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libvncserver-libz.a"; path = "lib/libvncserver-libz.a"; sourceTree = "<group>"; };
 		EB8B4219117B66EF004C4432 /* VNC Server.qtz */ = {isa = PBXFileReference; lastKnownFileType = "video.quartz-composer"; name = "VNC Server.qtz"; path = "Compositions/VNC Server.qtz"; sourceTree = "<group>"; };
+		EB9F7A5C15312FB8005F3219 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
+		EB9F7A5D153137C2005F3219 /* libjpeg.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libjpeg.8.dylib; path = lib/libjpeg.8.dylib; sourceTree = "<group>"; };
+		EB9F7A5E153137C2005F3219 /* libvncserver.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvncserver.dylib; path = lib/libvncserver.dylib; sourceTree = "<group>"; };
+		EB9F7A621531386D005F3219 /* default8x16.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = default8x16.h; path = include/rfb/default8x16.h; sourceTree = "<group>"; };
+		EB9F7A631531386D005F3219 /* keysym.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = keysym.h; path = include/rfb/keysym.h; sourceTree = "<group>"; };
+		EB9F7A641531386D005F3219 /* rfb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rfb.h; path = include/rfb/rfb.h; sourceTree = "<group>"; };
+		EB9F7A651531386D005F3219 /* rfbclient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rfbclient.h; path = include/rfb/rfbclient.h; sourceTree = "<group>"; };
+		EB9F7A661531386D005F3219 /* rfbconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rfbconfig.h; path = include/rfb/rfbconfig.h; sourceTree = "<group>"; };
+		EB9F7A671531386D005F3219 /* rfbint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rfbint.h; path = include/rfb/rfbint.h; sourceTree = "<group>"; };
+		EB9F7A681531386D005F3219 /* rfbproto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rfbproto.h; path = include/rfb/rfbproto.h; sourceTree = "<group>"; };
+		EB9F7A691531386D005F3219 /* rfbregion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = rfbregion.h; path = include/rfb/rfbregion.h; sourceTree = "<group>"; };
 		EBD66FDD112CD4BE00335393 /* VNCServerPlugIn.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VNCServerPlugIn.xml; sourceTree = "<group>"; };
 		EBD66FEA112CD58500335393 /* QCXPlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCXPlugIn.h; sourceTree = "<group>"; };
 		EBD66FEB112CD5E700335393 /* QCXPlugIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCXPlugIn.m; sourceTree = "<group>"; };
@@ -83,11 +79,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB4F6EAF11B7077800FE4528 /* libvncserver-libjpeg.a in Frameworks */,
-				EB4F6EAC11B7077300FE4528 /* libvncserver-libz.a in Frameworks */,
-				EB4F6EA711B7075600FE4528 /* libvncserver.a in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				16BA96310A7EB9AC001E4983 /* Quartz.framework in Frameworks */,
+				EB9F7A6C15313F45005F3219 /* libjpeg.8.dylib in Frameworks */,
+				EB9F7A6D15313F45005F3219 /* libvncserver.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,11 +94,11 @@
 			children = (
 				EB8B4214117B66A0004C4432 /* Compositions */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
+				EB9F7A6115313858005F3219 /* rfb */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
-				EB2A158B1128A8DF00353B43 /* VNCServer-Info.plist */,
 			);
 			name = "Quartz Composer Plug In";
 			sourceTree = "<group>";
@@ -111,9 +106,8 @@
 		089C1671FE841209C02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB8B41EE117B65A5004C4432 /* libvncserver-libjpeg.a */,
-				EB8B41EF117B65A5004C4432 /* libvncserver.a */,
-				EB8B41F0117B65A5004C4432 /* libvncserver-libz.a */,
+				EB9F7A5D153137C2005F3219 /* libjpeg.8.dylib */,
+				EB9F7A5E153137C2005F3219 /* libvncserver.dylib */,
 				16BA96300A7EB9AC001E4983 /* Quartz.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 			);
@@ -154,6 +148,7 @@
 		32C88E010371C26100C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				EB9F7A5C15312FB8005F3219 /* Readme.md */,
 				16AA5C440A7EEE7300888E31 /* VNC Server_Prefix.pch */,
 			);
 			name = "Other Sources";
@@ -167,6 +162,21 @@
 			name = Compositions;
 			sourceTree = "<group>";
 		};
+		EB9F7A6115313858005F3219 /* rfb */ = {
+			isa = PBXGroup;
+			children = (
+				EB9F7A621531386D005F3219 /* default8x16.h */,
+				EB9F7A631531386D005F3219 /* keysym.h */,
+				EB9F7A641531386D005F3219 /* rfb.h */,
+				EB9F7A651531386D005F3219 /* rfbclient.h */,
+				EB9F7A661531386D005F3219 /* rfbconfig.h */,
+				EB9F7A671531386D005F3219 /* rfbint.h */,
+				EB9F7A681531386D005F3219 /* rfbproto.h */,
+				EB9F7A691531386D005F3219 /* rfbregion.h */,
+			);
+			name = rfb;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,6 +188,7 @@
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
 				EBD6708C112CEEEB00335393 /* Copy Frameworks */,
+				EB9F7A7715314245005F3219 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -194,15 +205,21 @@
 /* Begin PBXProject section */
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "VNC Server" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 089C166AFE841209C02AAC07 /* Quartz Composer Plug In */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* VNC Server */,
-				233E2C640A83C768005A62DF /* Build & Copy */,
 			);
 		};
 /* End PBXProject section */
@@ -219,22 +236,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		233E2C690A83C783005A62DF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This shell script simply copies the built plug-in to \"~/Library/Graphics/Quartz Composer Plug-Ins\" and overrides any previous version at that location\n\nmkdir -p \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins\"\nrm -rf \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins/VNC Server.plugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/VNC Server.plugin\" \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins/\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		8D5B49B1048680CD000E48DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -247,14 +248,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		233E2C660A83C76D005A62DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8D5B49AC048680CD000E48DA /* VNC Server */;
-			targetProxy = 233E2C650A83C76D005A62DF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7238D5500DB6988600E9A42D /* Settings.xib */ = {
@@ -273,7 +266,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -281,7 +273,9 @@
 				GCC_PREFIX_HEADER = "VNC Server_Prefix.pch";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Graphics/Quartz Composer Plug-Ins";
+				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/lib\"";
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "VNC Server";
 				WRAPPER_EXTENSION = plugin;
 				ZERO_LINK = YES;
@@ -298,7 +292,9 @@
 				GCC_PREFIX_HEADER = "VNC Server_Prefix.pch";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Graphics/Quartz Composer Plug-Ins";
+				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/lib\"";
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "VNC Server";
 				WRAPPER_EXTENSION = plugin;
 			};
@@ -313,7 +309,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -325,21 +321,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
-				SDKROOT = macosx10.6;
-			};
-			name = Release;
-		};
-		233E2D8A0A83C7AC005A62DF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "Build & Install";
-			};
-			name = Debug;
-		};
-		233E2D8B0A83C7AC005A62DF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "Build & Install";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -360,15 +342,6 @@
 			buildConfigurations = (
 				1DEB913F08733D840010E9CD /* Debug */,
 				1DEB914008733D840010E9CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		233E2D890A83C7AC005A62DF /* Build configuration list for PBXAggregateTarget "Build & Copy" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				233E2D8A0A83C7AC005A62DF /* Debug */,
-				233E2D8B0A83C7AC005A62DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,19 +6,19 @@
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleGetInfoString</key>
+	<string>VNC Server version 1.1, Copyright Mirek Rusin &lt;mirek [at] me [dot] com&gt; GPL</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.${PRODUCT_NAME:identifier}</string>
+	<string>com.github.mirek.quartzcomposer-vnc</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
-	<key>CFBundleGetInfoString</key>
-	<string>VNC Server version 1.0, Copyright Mirek Rusin &lt;mirek [at] me [dot] com&gt; GPL</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
 	<key>CFBundleShortVersionString</key>
+	<string>1.1</string>
+	<key>CFBundleVersion</key>
 	<string>1.1</string>
 	<key>QCPlugInClasses</key>
 	<array>
